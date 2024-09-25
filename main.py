@@ -4,6 +4,8 @@ import subprocess
 import copy
 import sys
 import urllib.parse
+from os import mkdir
+from os.path import exists, join
 
 import requests
 
@@ -19,6 +21,11 @@ ZOOM_BASE_URL = ''
 ZOOM_USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:130.0) Gecko/20100101 Firefox/130.0'
 
 DOWNLOAD_PATH = 'downloads/'
+
+# feel free to push requests, if you ever want to improve this.
+
+# to operate the script
+# python main.py "zoom recording url" "recording password"
 
 def get_fileid_and_cookies(recordUrl, passcode):
     exports = {}
@@ -176,5 +183,13 @@ def download_zoom_recording():
 
     print('done')
 
+def check_file_path():
+    dlPath = join(DOWNLOAD_PATH)
+
+    if not exists(dlPath):
+        mkdir(dlPath)
+
 if __name__ == '__main__':
+    check_file_path()
+
     download_zoom_recording()
