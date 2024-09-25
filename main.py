@@ -22,6 +22,8 @@ ZOOM_USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:130.0) Gecko
 
 DOWNLOAD_PATH = 'downloads/'
 
+# it's just something that was on my mind, being able to keep an offline copy of my modules' lectures
+
 # feel free to push requests, if you ever want to improve this.
 
 # to operate the script
